@@ -1,3 +1,4 @@
-﻿  main.cpp
+﻿  Scene.cpp
+..\src\sources\Scene.cpp(89): warning C4244: '=': conversion from '__int64' to 'DWORD', possible loss of data
   OculusRoadRenderer.vcxproj -> C:\Users\Jonathan\Documents\Dev\Oculus-Rift-Basic-Road-Renderer\OculusRoadRenderer\OculusRoadRenderer\x64\Release\OculusRoadRenderer.exe
   OculusRoadRenderer.vcxproj -> C:\Users\Jonathan\Documents\Dev\Oculus-Rift-Basic-Road-Renderer\OculusRoadRenderer\OculusRoadRenderer\x64\Release\OculusRoadRenderer.pdb (Full PDB)

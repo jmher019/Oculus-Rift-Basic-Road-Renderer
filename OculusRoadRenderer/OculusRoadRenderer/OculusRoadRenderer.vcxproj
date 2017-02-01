@@ -69,8 +69,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>..\lib\GL;..\lib\GLFW;..\lib\glm;..\lib\OpenGL;..\lib\LibOVR\Lib\Windows\x64\Release\VS2015;$(IncludePath)</IncludePath>
-    <LibraryPath>..\lib\GL;..\lib\GLFW;..\lib\glm;..\lib\OpenGL;..\lib\LibOVR\Lib\Windows\x64\Release\VS2015;..\lib\LibOVR;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64</LibraryPath>
+    <IncludePath>..\lib\GL;..\lib\GLFW;..\lib\glm;..\lib\OpenGL;..\lib\LibOVR\Lib\Windows\x64\Release\VS2015;..\lib\LibOVRKernel\Lib\Windows\x64\Release\VS2015;$(IncludePath)</IncludePath>
+    <LibraryPath>..\lib\GL;..\lib\GLFW;..\lib\glm;..\lib\OpenGL;..\lib\LibOVR\Lib\Windows\x64\Release\VS2015;..\lib\LibOVR;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;..\lib\LibOVRKernel\Lib\Windows\x64\Release\VS2015</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -106,20 +106,34 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>OpenGL32.Lib;glfw3.lib;glew32.lib;LibOVR.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>OpenGL32.Lib;glfw3.lib;glew32.lib;LibOVR.lib;LibOVRKernel.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\sources\DepthBuffer.cpp" />
+    <ClCompile Include="..\src\sources\IndexBuffer.cpp" />
     <ClCompile Include="..\src\sources\main.cpp" />
+    <ClCompile Include="..\src\sources\Model.cpp" />
+    <ClCompile Include="..\src\sources\Scene.cpp" />
+    <ClCompile Include="..\src\sources\ShaderFill.cpp" />
+    <ClCompile Include="..\src\sources\TextureBuffer.cpp" />
+    <ClCompile Include="..\src\sources\VertexBuffer.cpp" />
     <ClCompile Include="..\src\sources\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\include\AppUtil.h" />
+    <ClInclude Include="..\src\include\DepthBuffer.h" />
+    <ClInclude Include="..\src\include\IndexBuffer.h" />
+    <ClInclude Include="..\src\include\Model.h" />
+    <ClInclude Include="..\src\include\Scene.h" />
+    <ClInclude Include="..\src\include\ShaderFill.h" />
+    <ClInclude Include="..\src\include\TextureBuffer.h" />
+    <ClInclude Include="..\src\include\VertexBuffer.h" />
     <ClInclude Include="..\src\include\Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
